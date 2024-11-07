@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackOverflow 1.0 Recap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HackOverflow 1.0 Recap</h1>
+</header>
+
+<section id="description">
+    <h2>About HackOverflow 1.0</h2>
+    <p>HackOverflow 1.0 was an incredible 24-hour hackathon event held at KLE Institute of Technology. Participants showcased their technical skills and innovative ideas, building solutions to real-world problems. The event saw students from various fields coming together to collaborate, learn, and compete.</p>
+</section>
+
+<section id="winner-photos">
+    <h2>Winning Teams</h2>
+    <div class="gallery">
+        <img src="winner1.jpg" alt="Winner Team 1">
+        <img src="winner2.jpg" alt="Winner Team 2">
+        <img src="winner3.jpg" alt="Winner Team 3">
+        <!-- Add more images as needed -->
+    </div>
+</section>
+
+<section id="event-photos">
+    <h2>Event Highlights</h2>
+    <div class="gallery">
+        <img src="event1.jpg" alt="Event Photo 1">
+        <img src="event2.jpg" alt="Event Photo 2">
+        <img src="event3.jpg" alt="Event Photo 3">
+        <!-- Add more images as needed -->
+    </div>
+</section>
+
+<script>
+    // Array of winner photos and event photos
+    const winnerPhotos = ["winner1.jpg", "winner2.jpg", "winner3.jpg"];
+    const eventPhotos = ["event1.jpg", "event2.jpg", "event3.jpg"];
+
+    // Function to dynamically display images in the gallery
+    function loadImages(photoArray, containerId) {
+        const container = document.getElementById(containerId).querySelector('.gallery');
+        photoArray.forEach(photo => {
+            const img = document.createElement('img');
+            img.src = photo;
+            img.alt = "Photo";
+            container.appendChild(img);
+        });
+    }
+
+    // Load images on page load
+    window.onload = function() {
+        loadImages(winnerPhotos, "winner-photos");
+        loadImages(eventPhotos, "event-photos");
+    };
+</script>
+
+</body>
+</html>
